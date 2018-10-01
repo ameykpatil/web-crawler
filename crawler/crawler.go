@@ -25,16 +25,11 @@ func NewSiteMap(url string) *SiteMap {
 
 // Crawler is a struct which encapsulate all the properties related to crawling
 type Crawler struct {
-	// the base URL of the website being crawled
-	seedURL string
-	// host of the seed URL
-	host string
-	// map which contains urls processed to avoid duplicate processing
-	urls      map[string]string
-	// siteMap to show the url tree
-	siteMap   *SiteMap
-	// mutex to avoid concurrent access to urls map
-	urlsMutex *sync.Mutex
+	seedURL   string            // the base URL of the website being crawled
+	host      string            // host of the seed URL
+	urls      map[string]string // map which contains urls processed to avoid duplicate processing
+	siteMap   *SiteMap          // siteMap to show the url tree
+	urlsMutex *sync.Mutex       // mutex to avoid concurrent access to urls map
 }
 
 // NewCrawler is a constructor for creating Crawler instance
